@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class node{
+    public:
+    int value;
+    node* next;
+
+    node(int val){
+        this->value = val;
+        this->next = NULL;
+    }
+};
+
+int main(){
+    node* head = new node(10);
+    node* a = new node(20);
+    node* b = new node(30);
+
+    head->next = a;
+    a->next = b;
+    
+    cout << head->value << endl;
+    cout << head->next->value << endl;
+}
