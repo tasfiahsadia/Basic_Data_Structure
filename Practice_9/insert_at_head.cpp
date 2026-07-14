@@ -22,8 +22,13 @@ void print_forward(node* head){
     cout << endl;
 }
 
-void insert_at_head(node*& head, int val){
+void insert_at_head(node* &head, node* &tail, int val){
     node* newnode = new node(val);
+    if(head == NULL){
+        head = newnode;
+        tail = newnode;
+        return;
+    }
     newnode->next = head;
     head->prev = newnode;
     head = newnode;
@@ -39,7 +44,7 @@ int main(){
     a->next = tail;
     tail->prev = a;
 
-    insert_at_head(head, 5);
-    insert_at_head(head, -15);
+    insert_at_head(head, tail, 5);
+    insert_at_head(head, tail, -15);
     print_forward(head);
 }
