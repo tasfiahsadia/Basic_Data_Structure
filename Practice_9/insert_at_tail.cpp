@@ -22,24 +22,31 @@ void print_forward(node* head){
     cout << endl;
 }
 
-void insert_at_tail(node*& tail, int val){
+void insert_at_tail(node* &head, node* &tail, int val){
     node* newnode = new node(val);
+    if(head == NULL){
+        head = newnode;
+        tail = newnode;
+        return;
+    }
     tail->next = newnode;
     newnode->prev = tail;
     tail = newnode;
 }
 
 int main(){
-    node* head = new node(10);
-    node* a = new node(20);
-    node* tail = new node(30);
+    node* head = NULL;
+    node* tail = NULL;
+    // node* head = new node(10);
+    // node* a = new node(20);
+    // node* tail = new node(30);
     
-    head->next = a;
-    a->prev = head;
-    a->next = tail;
-    tail->prev = a;
+    // head->next = a;
+    // a->prev = head;
+    // a->next = tail;
+    // tail->prev = a;
 
-    insert_at_tail(tail, 35);
-    insert_at_tail(tail, 40);
+    insert_at_tail(head, tail, 35);
+    insert_at_tail(head, tail, 40);
     print_forward(head);
 }
