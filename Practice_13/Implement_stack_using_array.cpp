@@ -24,18 +24,32 @@ class Stack{
 
 int main(){
     Stack st;
-    st.push(1);
-    st.push(2);
-    st.push(3);
 
-    cout << st.top() << endl;
+    int n;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        int x;
+        cin >> x;
+        st.push(x);
+    }
 
-    st.pop();
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.top() << endl;
-    st.pop();
+    while(!st.empty()){
+        cout << st.top() << " ";
+        st.pop();
+    }
 
-    if(!st.empty()) //not true(false)
-        cout << st.top() << endl;
+    // st.push(1);
+    // st.push(2);
+    // st.push(3);
+
+    // cout << st.top() << endl;
+
+    // st.pop();
+    // cout << st.top() << endl;
+    // st.pop();
+    // cout << st.top() << endl;
+    // st.pop();
+
+    // if(!st.empty()) //not true(false)
+    //     cout << st.top() << endl;
 }
